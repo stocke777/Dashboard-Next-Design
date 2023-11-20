@@ -23,7 +23,7 @@ const Sidebar = (props: Props) => {
 									className='hover:text-primary mb-4 flex items-center'
 								>
 									<div className='lg:pr-4'>{item.icon}</div>
-									<div className='lg:block hidden'>{item.name}</div>
+									<div className='lg:block hidden font-bold'>{item.name}</div>
 								</li>
 							</a>
 						);
