@@ -1,10 +1,25 @@
 import React from "react";
-
+import connectToDatabase from '@/utils/db.js'
+import User from "@/utils/models/User"
 type Props = {};
 
-const page = (props: Props) => {
+const page = async (props: Props) => {
+	try {
+		console.log('CONNECTING TO MONGO');
+		await connectToDatabase();
+		console.log('CONNECTED TO MONGO');
+	
+		console.log('CREATING DOCUMENT');
+		const test = await User.create({name: "JaiXXXXXZZ", email: "asbc@kvsd.comm"});
+		console.log('CREATED DOCUMENT');
+	
+		// res.json({ test });
+	  } catch (error) {
+		console.log(error);
+		// res.json({ error });
+	  }
 	return (
-		<div className="flex flex-col justify-between items-center h-full">
+		<div className='flex flex-col justify-between items-center h-full'>
 			<div className='overflow-x-auto'>
 				<table className='table'>
 					{/* head */}

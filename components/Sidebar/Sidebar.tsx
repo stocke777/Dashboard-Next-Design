@@ -2,6 +2,7 @@ import React from "react";
 import { FaUserSecret } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
+import Link from 'next/link'
 type Props = {};
 
 const sidebarOptions = [
@@ -17,15 +18,15 @@ const Sidebar = (props: Props) => {
 				<ul>
 					{sidebarOptions.map((item, index) => {
 						return (
-							<a href={item.link}>
+							<Link href={item.link} key={item.name}>
 								<li
-									key={item.name}
+									
 									className='hover:text-primary mb-4 flex items-center'
 								>
 									<div className='lg:pr-4'>{item.icon}</div>
 									<div className='lg:block hidden font-bold'>{item.name}</div>
 								</li>
-							</a>
+							</Link>
 						);
 					})}
 				</ul>
