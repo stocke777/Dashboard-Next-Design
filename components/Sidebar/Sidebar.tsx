@@ -7,7 +7,7 @@ type Props = {};
 
 const sidebarOptions = [
 	{ name: "Dashboard", active: false, icon: <FaHome />, link: "/" },
-	{ name: "Users", active: false, icon: <FaUserSecret />, link: "/users" },
+	{ name: "Users", active: false, icon: <FaUserSecret />, link: { pathname: '/users', query: {page: 1}} },
 	{ name: "Todo List", active: false, icon: <FaCheck />, link: "/todo" },
 ];
 
